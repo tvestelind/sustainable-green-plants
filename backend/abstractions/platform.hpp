@@ -1,3 +1,5 @@
+#ifndef PLATFORM_HPP
+#define PLATFORM_HPP
 namespace platform
 {
     enum DigitalPin {PUMP, NOZZLE, FAN, BOARDLED};
@@ -5,12 +7,7 @@ namespace platform
     enum Mode {INPUT, OUTPUT};
     enum State {LOW, HIGH};
 
-    union Pin {DigitalPin; AnalogPin};
-
     class TimePoint {
-        unsigned int second, minute, hour;
-        unsigned int day, month, year;
-
         public:
             /**
              * Create an object representing a point in time
@@ -60,7 +57,8 @@ namespace platform
      * @param Pin p
      * @param Mode m
      */
-    void pinMode(Pin p, Mode m);
+    void pinMode(DigitalPin p, Mode m);
+    void pinMode(AnalogPin p, Mode m);
 
     /**
      * Write state to pin.
@@ -78,3 +76,4 @@ namespace platform
      */
     void analogWrite(AnalogPin p, unsigned int value);
 }
+#endif

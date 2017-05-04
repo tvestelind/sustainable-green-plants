@@ -1,3 +1,6 @@
+#ifndef DHT_HPP
+#define DHT_HPP
+
 #include "platform.hpp"
 
 namespace p = platform;
@@ -15,3 +18,4 @@ namespace dht
     };
 
 }
+#endif

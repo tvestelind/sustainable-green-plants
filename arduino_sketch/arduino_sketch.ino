@@ -75,7 +75,7 @@ int sensorTempData[] = {0,0}; // temp, humid, light
 
 void setup() {
   // Set the time
-  setTime(20,0,0,1,1,2014); // hour,min,sec,day,month,year
+  p::setTime(20,0,0,1,1,2014); // hour,min,sec,day,month,year
 
   // Set pins as outputs
   p::pinMode(p::RED, p::OUTPUT);
@@ -193,7 +193,7 @@ void serialControl()
         int h  = serial.read; //First valid integer
         int m  = serial.read; //Second valid integer
         int d  = serial.read; //Third valid integer
-        setTime(h,m,0,d,1,2014);    //hour,min,sec,day,month,year
+        p::setTime(h,m,0,d,1,2014);    //hour,min,sec,day,month,year
         t = p::now();
         tDelay = runInterval;
         tDelayMin = measureInterval;

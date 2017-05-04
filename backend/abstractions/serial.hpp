@@ -1,3 +1,6 @@
+#ifndef SERIAL_HPP
+#define SERIAL_HPP
+
 #include <string>
 
 namespace serial
@@ -12,6 +15,7 @@ namespace serial
             char read(void);
             void write(char c);
             void write(std::string s);
-    }
+    };
 
 }
+#endif
